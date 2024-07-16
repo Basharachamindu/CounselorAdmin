@@ -1,0 +1,130 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Counsellor Details Page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="header">
+    <h1>Counsellor Details</h1>
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="Search by name...">
+      <button onclick="searchUsers()">Search</button>
+    </div>
+  </div>
+  <table id="counsellor-table">
+    <thead>
+      <tr>
+        <th>Counsellor ID</th>
+        <th>NIC</th>
+        <th>Full Name</th>
+        <th>Address</th>
+        <th>Phone Number</th>
+        <th>Date of Birth</th>
+        <th>Gender</th>
+        <th>Education</th>
+        <th>WorkHours</th>
+        <th>Management</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Existing table rows -->
+    </tbody>
+  </table>
+
+  <!-- Hidden modal form for adding new data -->
+  <div id="modal-form"  class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2>Enter Counsellor Details</h2>
+      <form onsubmit="return addCounsellors()" action="counsellerAdd.php" method="post">
+        <!-- <label>Counsellor ID:</label> -->
+          <!-- <input type="hidden" id="counsellor_id" name="counsellor-id" required> -->
+        <label>Nic:</label>
+          <input type="text" id="nic" name="nic" class="custom-input" required>
+        <label>Full Name:</label>
+          <input type="text" id="fullname"  name="fullname" class="custom-input" required>
+        <label>Address:</label>
+          <input type="text" id="address"  name="address" class="custom-input" required>
+        <label>PhoneNo:</label>
+          <input type="text" id="phoneno" name="phoneno" class="custom-input" required>
+        <label>DOB:</label>
+          <input type="date" id="dob" name="dob" class="custom-input" required>
+        <label>Gender:</label>
+          <!-- <input type="text" id="Gender" required> -->
+          <select id="gender" name="gender" class="custom-input">
+            <option value="male">male</option>
+            <option value="female">female</option>
+            <option value="other">other</option>
+          </select>
+        <label>Education:</label>
+          <input type="text" id="education" name="education" class="custom-input" required>
+        <label>WorkHours:</label>
+          <!-- <input type="text" id="WorkHours" required> -->
+          <select id="workhours" name="workhours" class="custom-input">
+            <option value="Part_Time">Part-Time</option>
+            <option value="Full_Time">Full-Time</option>
+          </select>
+          
+        <!-- Add input fields for other table headings as needed -->
+        
+        <input type="submit" value="Add Counsellor">
+      </form>
+    </div>
+  </div>
+<!-- ***************edit ***************** -->
+ <!-- Hidden modal form for editing data -->
+<div id="edit-modal-form" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeEditModal()">&times;</span>
+    <h2>Edit Counsellor Details</h2>
+    <!-- Add the form element here with the correct ID and onSubmit attribute -->
+    <form onsubmit="return saveEditedCounsellor()" action="counsellerUpdate.php" method="post">
+      <!-- Add the input fields here with the correct names and IDs -->
+      <input type="hidden" id="editCounsellorId" name="counsellor_id">
+      <label>Nic:</label>
+      <input type="text" id="editNIC" name="nic" class="custom-input" required>
+      <label>Full Name:</label>
+      <input type="text" id="editFullName" name="full_name" class="custom-input" required>
+      <label>Address:</label>
+      <input type="text" id="editAddress" name="address" class="custom-input" required>
+      <label>PhoneNo:</label>
+      <input type="text" id="editPhoneNo" name="phone_number" class="custom-input" required>
+      <label>DOB:</label>
+      <input type="date" id="editDOB" name="dob" class="custom-input" required>
+      <label>Gender:</label>
+      <select id="editGender" name="gender" class="custom-input">
+        <option value="male">male</option>
+        <option value="female">female</option>
+        <option value="other">other</option>
+      </select>
+      <label>Education:</label>
+      <input type="text" id="editEducation" name="education" class="custom-input" required>
+      <label>WorkHours:</label>
+      <select id="editWorkHours" name="work_hours" class="custom-input">
+        <option value="Part_Time">Part-Time</option>
+        <option value="Full_Time">Full-Time</option>
+      </select>
+      <input type="submit" value="Save">
+    </form>
+  </div>
+</div>
+
+
+  <div class="button-container">
+    <button class="Add" onclick="openModal()">Add</button>
+    <!-- <button class="delete" onclick="deleteRow()">Delete</button>
+    <button class="Add" onclick="saveData()">Edit</button> -->
+  </div>
+
+  <div class="count-container">
+    <p>Total Counsellors: <span id="total-counsellors">0</span></p>
+    <p>Total Part-Time Counsellors: <span id="total-part-time">0</span></p>
+    <p>Total Full-Time Counsellors: <span id="total-full-time">0</span></p>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+
+body, h1, h2, h3, p, div {
+  margin: 0;
+  padding: 0;
+}
+
+/* Set background color and font family */
+body {
+  background-color: #ffffff; /* Light blue background */
+  font-family: Arial, sans-serif;
+}
+
+/* Set heading style */
+h1 {
+  text-align: center;
+  padding: 20px;
+  color:#263af5
+}
+
+/* Style the dashboard container */
+.dashboard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+/* Style the cards */
+.card {
+  width: 200px;
+  height: 150px;
+  background-color: #1e6be0; /* Dark blue card background */
+  color: #ffffff; /* White text color */
+  margin: 10px;
+  padding: 20px;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.card:hover{
+  background-color: #4985df;
+}
+
+.card i {
+  font-size: 40px;
+  margin-bottom: 10px;
+  margin-top: 30px;
+}
+
+/* Style the card headings */
+.card h3 {
+  font-size: 16px;
+}
+
+/* Style the icons */
+.fa-envelope:before {
+  content: "\f0e0";
+}
+
+.fa-phone:before {
+  content: "\f095";
+}
+
+.fa-calendar-alt:before {
+  content: "\f073";
+}
+
+.fa-folder:before {
+  content: "\f07b";
+}
+
+a{
+  text-decoration: none;
+  color:#ffffff;
+}
+
+a::after{
+  color: #ffffff;
+}
